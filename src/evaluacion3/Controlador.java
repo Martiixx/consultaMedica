@@ -26,8 +26,9 @@ public class Controlador implements ActionListener, MouseListener,FocusListener{
     String[] empleado;
     String departamento = "";
 
-    String est_civil;
-    String depto;
+    String genero;
+    String isapre;
+    String donante;
 
     
     private Modelo modelo = new Modelo();
@@ -52,21 +53,22 @@ public class Controlador implements ActionListener, MouseListener,FocusListener{
         btnAgregar, //agrega empleado
         btnLimpiar,//limpia pantalla agregar
         btnVolver, //regresa a vista consultas
-        radioSoltero,
-        radioCasado,
-        radioViudo,
-        comboDepto,
-        btnBuscar,
-        radioSoltero2,
-        radioCasado2,
-        radioViudo2,
-        comboDepto2,
+        radioSi,
+        radioNo,
+        radioSi1,
+        radioNo1,
+        btnBuscar,        
         btnModificar,
         btnVolver2,
-        btnVolver3,
-        btnVolver4,
-        btnEliminar,
-        comboDepto3,
+        radioMasculino,
+        radioFemenino,
+        radioMasculino2,
+        radioFemenino2,
+        radioSi2,
+        radioNo2,
+        radioSi3,
+        radioNo3,
+        btnEliminar,        
         MenuFunciones,
         menuFile
         
@@ -132,52 +134,47 @@ public class Controlador implements ActionListener, MouseListener,FocusListener{
         this.addEmp.btnVolver.setActionCommand("btnVolver");
         this.addEmp.btnVolver.addActionListener(this);
         
-        this.addEmp.comboDepto.addActionListener(this);
-        this.addEmp.comboDepto.setActionCommand("comboDepto");
         
-        this.addEmp.radioCasado.setActionCommand("radioCasado");
-        //this.addEmp.radioCasado.addActionListener(this);
+        this.addEmp.radioMasculino.setActionCommand("radioMasculino");
         
-        this.addEmp.radioSoltero.setActionCommand("radioSoltero");
-        //this.addEmp.radioSoltero.addActionListener(this);
+        this.addEmp.radioFemenino.setActionCommand("radioFemenino");
         
-        this.addEmp.radioViudo.setActionCommand("radioViudo");
-        //this.addEmp.radioViudo.addActionListener(this);
         
-        this.delete.btnEliminar.setActionCommand("btnEliminar");
-        this.delete.btnEliminar.addActionListener(this);
+        this.addEmp.radioSi.setActionCommand("radioSi");
         
-        this.delete.btnVolver4.setActionCommand("btnVolver4");
-        this.delete.btnVolver4.addActionListener(this);
+        
+        this.addEmp.radioNo.setActionCommand("radioNo");
+       
+        
+        this.addEmp.radioSi1.setActionCommand("radioSi1");
+        
+        this.addEmp.radioNo1.setActionCommand("radioNo1");
+        
+        this.list.btnBuscar.setActionCommand("btnbuscar");
+        this.list.btnBuscar.addActionListener(this);
+        
+        this.list.btnEliminar.setActionCommand("btnEliminar");
+        this.list.btnEliminar.addActionListener(this);
+        
+        this.list.btnModificar.setActionCommand("btnModificar");
+        this.list.btnModificar.addActionListener(this);
         
         this.list.btnVolver2.setActionCommand("btnVolver2");
         this.list.btnVolver2.addActionListener(this);
+        
+        this.list.radioFemenino2.setActionCommand("radioFemenino2");
+        
+        this.list.radioMasculino2.setActionCommand("radioMasculino2");
+        
+        this.list.radioNo2.setActionCommand("radioNo2");
+        
+        this.list.radioNo3.setActionCommand("radioNo3");
+        
+        this.list.radioSi2.setActionCommand("radioSi2");
+        
+        this.list.radioSi3.setActionCommand("radioSi3");
+        
        
-        this.list.comboDepto3.setActionCommand("comboDepto3");
-        this.list.comboDepto3.addActionListener(this);
-        
-        this.search.btnBuscar.setActionCommand("btnBuscar");
-        this.search.btnBuscar.addActionListener(this);
-        
-        this.search.btnModificar.setActionCommand("btnModificar");
-        this.search.btnModificar.addActionListener(this);
-        
-        this.search.btnVolver3.setActionCommand("btnVolver3");
-        this.search.btnVolver3.addActionListener(this);
-        
-        this.search.comboDepto2.setActionCommand("comboDepto2");
-        //this.search.comboDepto2.addActionListener(this);
-        
-        this.search.radioCasado2.setActionCommand("radiocasado2");
-        //this.search.radioCasado2.addActionListener(this);
-        
-        this.search.radioSoltero2.setActionCommand("radioSoltero2");
-        //this.search.radioSoltero2.addActionListener(this);
-        
-        this.search.radioViudo2.setActionCommand("radioViudo2");
-        //this.search.radioViudo2.addActionListener(this);
-        
-        
     }
     
     @Override
@@ -187,180 +184,161 @@ public class Controlador implements ActionListener, MouseListener,FocusListener{
         {
             case MenuAgregarEmpleados:
                 this.addEmp.setLocationRelativeTo(null);
-                this.addEmp.setTitle("Agregar Empleados");
+                this.addEmp.setTitle("Agregar Pacientes");
                 this.addEmp.setVisible(true);
                 this.vistaPrincipal.setVisible(false);
-                this.addEmp.txtCodigo.setText("");
+                this.addEmp.txtEdad.setText("");
                 this.addEmp.txtNombre.setText("");
-                this.addEmp.txtApellido.setText("");
-                this.addEmp.txtCelular.setText("");
-                this.addEmp.txtRut.setText("");
-                this.addEmp.txtEmail.setText("");
-                this.addEmp.txtSueldo.setText("");
-                this.addEmp.radioCasado.setSelected(false);
-                this.addEmp.radioSoltero.setSelected(false);
-                this.addEmp.radioViudo.setSelected(false);
+                this.addEmp.txtDireccion.setText("");
+                this.addEmp.txtCiudad.setText("");
+                this.addEmp.txtRut.setText("");                
+                this.addEmp.radioFemenino.setSelected(false);
+                this.addEmp.radioMasculino.setSelected(false);
+                this.addEmp.radioNo.setSelected(false);
+                this.addEmp.radioNo1.setSelected(false);
+                this.addEmp.radioSi.setSelected(false);
+                this.addEmp.radioSi1.setSelected(false);
+                
                 
                 break;
                 
             case MenuListarEmpleados:                
                 this.list.setLocationRelativeTo(null);
-                this.list.setTitle("Listar Empleados");
+                this.list.setTitle("Listar Pacientes");
                 this.list.setVisible(true);
                 this.vistaPrincipal.setVisible(false);
-                this.list.tablaEmpleados.setModel(this.modelo.ListadoEmpleados(departamento));
+                this.list.tablaEmpleados.setModel(this.modelo.ListadoPacientes());
+                this.list.txtEdad2.setText("");
+                this.list.txtNombre2.setText("");
+                this.list.txtDireccion2.setText("");
+                this.list.txtCiudad2.setText("");
+                this.list.txtRut2.setText("");                
+                this.list.radioFemenino2.setSelected(false);
+                this.list.radioMasculino2.setSelected(false);
+                this.list.radioNo2.setSelected(false);
+                this.list.radioNo3.setSelected(false);
+                this.list.radioSi2.setSelected(false);
+                this.list.radioSi3.setSelected(false);
                 break;
                 
             case MenuBuscarEmpleado:
-                this.search.setLocationRelativeTo(null);
-                this.search.setTitle("Buscar Empleado");
-                this.search.setVisible(true);
+                this.list.setLocationRelativeTo(null);
+                this.list.setTitle("Buscar Pacientes");
+                this.list.setVisible(true);
                 this.vistaPrincipal.setVisible(false);
-                this.search.txtApellido2.setText("");
-                this.search.txtCelular2.setText("");
-                this.search.txtCodigo2.setText("");
-                this.search.txtEmail2.setText("");
-                this.search.txtNombre2.setText("");
-                this.search.txtRut2.setText("");
-                this.search.txtSueldo2.setText("");
-                this.search.jTextField1.setText("");
-                this.search.radioCasado2.setSelected(false);
-                this.search.radioSoltero2.setSelected(false);
-                this.search.radioViudo2.setSelected(false);
+                this.list.tablaEmpleados.setModel(this.modelo.ListadoPacientes());
+                this.list.txtEdad2.setText("");
+                this.list.txtNombre2.setText("");
+                this.list.txtDireccion2.setText("");
+                this.list.txtCiudad2.setText("");
+                this.list.txtRut2.setText("");                
+                this.list.radioFemenino2.setSelected(false);
+                this.list.radioMasculino2.setSelected(false);
+                this.list.radioNo2.setSelected(false);
+                this.list.radioNo3.setSelected(false);
+                this.list.radioSi2.setSelected(false);
+                this.list.radioSi3.setSelected(false);
                 break;
                 
             case MenuEliminarEmpleado:
-                this.delete.setLocationRelativeTo(null);
-                this.delete.setTitle("Eliminar Empleado");
-                this.delete.setVisible(true);
+                this.list.setLocationRelativeTo(null);
+                this.list.setTitle("Eliminar Pacientes");
+                this.list.setVisible(true);
                 this.vistaPrincipal.setVisible(false);
+                this.list.tablaEmpleados.setModel(this.modelo.ListadoPacientes());
+                this.list.txtEdad2.setText("");
+                this.list.txtNombre2.setText("");
+                this.list.txtDireccion2.setText("");
+                this.list.txtCiudad2.setText("");
+                this.list.txtRut2.setText("");                
+                this.list.radioFemenino2.setSelected(false);
+                this.list.radioMasculino2.setSelected(false);
+                this.list.radioNo2.setSelected(false);
+                this.list.radioNo3.setSelected(false);
+                this.list.radioSi2.setSelected(false);
+                this.list.radioSi3.setSelected(false);
                 break;
                 
             case menuSalir:
                 System.exit(0);
                 
             case btnAgregar:
-                if(this.addEmp.radioCasado.isSelected()){
-                    est_civil = "c";
+                if(this.addEmp.radioFemenino.isSelected()){
+                    genero = "f";
                 }
-                if(this.addEmp.radioSoltero.isSelected()){
-                    est_civil = "s";
+                if(this.addEmp.radioMasculino.isSelected()){
+                    genero = "m";
                            
                 }
-                if(this.addEmp.radioViudo.isSelected()){
-                    est_civil = "v";
+                if(this.addEmp.radioNo.isSelected()){
+                    isapre= "s";
                 }
-                depto = String.valueOf(this.addEmp.comboDepto.getSelectedItem());
-                if(this.modelo.ingresoEmpleado(Integer.parseInt(this.addEmp.txtCodigo.getText()), this.addEmp.txtRut.getText(), this.addEmp.txtNombre.getText(),this.addEmp.txtApellido.getText(), Integer.parseInt(this.addEmp.txtCelular.getText()), this.addEmp.txtEmail.getText(), Integer.parseInt(this.addEmp.txtSueldo.getText()), est_civil, depto)){
+                if(this.addEmp.radioSi.isSelected()){
+                    isapre = "n";
+                }
+                if(this.addEmp.radioNo1.isSelected()){
+                    donante = "n";
+                }
+                if(this.addEmp.radioSi1.isSelected()){
+                    donante = "s";
+                }
+                if(this.modelo.ingresoEmpleado(this.addEmp.txtRut.getText(), this.addEmp.txtNombre.getText(),genero, Integer.parseInt(this.addEmp.txtEdad.getText()),this.addEmp.txtDireccion.getText(), this.addEmp.txtCiudad.getText(), isapre,donante)){
                     
-                    JOptionPane.showMessageDialog(null,"Empleado agregado correctamente");
+                    JOptionPane.showMessageDialog(null,"Paciente agregado correctamente");
                 }else{
-                    JOptionPane.showMessageDialog(null,"No se pudo agregar empleado");
+                    JOptionPane.showMessageDialog(null,"No se pudo agregar paciente");
                 }
                 break;    
                 
             case btnLimpiar:
-                this.addEmp.txtCodigo.setText("");
+                this.addEmp.txtEdad.setText("");
                 this.addEmp.txtNombre.setText("");
-                this.addEmp.txtApellido.setText("");
-                this.addEmp.txtCelular.setText("");
-                this.addEmp.txtRut.setText("");
-                this.addEmp.txtEmail.setText("");
-                this.addEmp.txtSueldo.setText("");
-                this.addEmp.radioCasado.setSelected(false);
-                this.addEmp.radioSoltero.setSelected(false);
-                this.addEmp.radioViudo.setSelected(false);
-                this.addEmp.comboDepto.setSelectedIndex(0);
-                this.addEmp.txtCodigo.requestFocusInWindow();
+                this.addEmp.txtDireccion.setText("");
+                this.addEmp.txtCiudad.setText("");
+                this.addEmp.txtRut.setText("");                
+                this.addEmp.radioFemenino.setSelected(false);
+                this.addEmp.radioMasculino.setSelected(false);
+                this.addEmp.radioNo.setSelected(false);
+                this.addEmp.radioNo1.setSelected(false);
+                this.addEmp.radioSi.setSelected(false);
+                this.addEmp.radioSi1.setSelected(false);
                 break;
 
             
                 
             case btnEliminar:
-                this.modelo.eliminaEmpleado(Integer.parseInt(this.delete.jTextField1.getText()));
+                this.modelo.eliminaEmpleado(this.list.txtRut2.getText());
                 break;
             case btnBuscar:
-                empleado= this.modelo.buscarEmpleado(Integer.parseInt(this.search.jTextField1.getText()));
-                this.search.txtCodigo2.setText(empleado[0]);
-                this.search.txtRut2.setText(empleado[1]);
-                this.search.txtNombre2.setText(empleado[2]);
-                this.search.txtApellido2.setText(empleado[3]);
-                this.search.txtCelular2.setText(empleado[4]);
-                this.search.txtEmail2.setText(empleado[5]);
-                this.search.txtSueldo2.setText(empleado[6]);
-                if(empleado[7].equals("c")){
-                    this.search.radioCasado2.setSelected(true);
+                empleado= this.modelo.buscarPaciente(this.list.txtRut2.getText());
+                this.list.txtRut2.setText(empleado[0]);
+                this.list.txtNombre2.setText(empleado[1]);
+                
+                this.list.txtEdad2.setText(empleado[3]);
+                this.list.txtDireccion2.setText(empleado[4]);
+                this.list.txtCiudad2.setText(empleado[5]);
+                
+                if(empleado[2].equals("f")){
+                    this.list.radioFemenino2.setSelected(true);
                 }
-                if(empleado[7].equals("s")){
-                    this.search.radioSoltero2.setSelected(true);
+                if(empleado[2].equals("m")){
+                    this.list.radioMasculino2.setSelected(true);
                 }
-                if(empleado[7].equals("v")){
-                    this.search.radioViudo2.setSelected(true);
+                if(empleado[6].equals("s")){
+                    this.list.radioSi2.setSelected(true);
                 }
-                if(empleado[8].equals("Informática")){
-                    this.search.comboDepto2.setSelectedIndex(1);
+                if(empleado[6].equals("n")){
+                    this.list.radioNo2.setSelected(true);
                 }
-                if(empleado[8].equals("Redes")){
-                    this.search.comboDepto2.setSelectedIndex(2);
+                 if(empleado[7].equals("s")){
+                    this.list.radioSi3.setSelected(true);
                 }
-                if(empleado[8].equals("Administración")){
-                    this.search.comboDepto2.setSelectedIndex(3);
-                }
-                if(empleado[8].equals("Finanzas")){
-                    this.search.comboDepto2.setSelectedIndex(4);
-                }
-                if(empleado[8].equals("Bienestar")){
-                    this.search.comboDepto2.setSelectedIndex(5);
+                if(empleado[7].equals("n")){
+                    this.list.radioNo3.setSelected(true);
                 }
                 break;
 
-            /*case comboDepto3:                
-                if(this.list.comboDepto3.equals("Informática")){
-                    this.list.setLocationRelativeTo(null);
-                    this.list.setTitle("Listar Empleados");
-                    this.list.setVisible(true);
-                    this.vistaPrincipal.setVisible(false);
-                    departamento="Informática";
-                    this.list.tablaEmpleados.setModel(this.modelo.ListadoEmpleados(departamento));
-                    break;
-                }
-                if(this.list.comboDepto3.equals("Redes")){
-                    this.list.setLocationRelativeTo(null);
-                    this.list.setTitle("Listar Empleados");
-                    this.list.setVisible(true);
-                    this.vistaPrincipal.setVisible(false);
-                    departamento="Redes";
-                    this.list.tablaEmpleados.setModel(this.modelo.ListadoEmpleados(departamento));
-                    break;
-                }
-                if(this.list.comboDepto3.equals("Administración")){
-                    this.list.setLocationRelativeTo(null);
-                    this.list.setTitle("Listar Empleados");
-                    this.list.setVisible(true);
-                    this.vistaPrincipal.setVisible(false);
-                    departamento="Administración";
-                    this.list.tablaEmpleados.setModel(this.modelo.ListadoEmpleados(departamento));
-                    break;
-                }
-                if(this.list.comboDepto3.equals("Finanzas")){
-                    this.list.setLocationRelativeTo(null);
-                    this.list.setTitle("Listar Empleados");
-                    this.list.setVisible(true);
-                    this.vistaPrincipal.setVisible(false);
-                    departamento="Finanzas";
-                    this.list.tablaEmpleados.setModel(this.modelo.ListadoEmpleados(departamento));
-                    break;
-                }
-                if(this.list.comboDepto3.equals("Bienestar")){
-                    this.list.setLocationRelativeTo(null);
-                    this.list.setTitle("Listar Empleados");
-                    this.list.setVisible(true);
-                    this.vistaPrincipal.setVisible(false);
-                    departamento="Bienestar";
-                    this.list.tablaEmpleados.setModel(this.modelo.ListadoEmpleados(departamento));
-                    break;
-                }
-                */
+       
                 
             case btnVolver:
                 this.addEmp.setVisible(false);

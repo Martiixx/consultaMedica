@@ -53,7 +53,7 @@ public class Modelo extends conexion {
         return tablemodel;
 }
     
-    public String[] buscarPaciente(int rut){
+    public String[] buscarPaciente(String rut){
         String[] datos=new String[9];
         if(existe(rut)){
             String query = "SELECT rut,nombre,genero,edad,direccion,ciudad,isapre,donante FROM paciente  where rut="+rut+";";
@@ -116,7 +116,7 @@ public class Modelo extends conexion {
         //}
 }
     
-    public boolean eliminaEmpleado(int rut){
+    public boolean eliminaEmpleado(String rut){
        //if(existe(codigo)){
         String query = "DELETE FROM consultamedica.paciente where rut="+rut+";";
         try {
@@ -135,7 +135,7 @@ public class Modelo extends conexion {
     }
     
     
-    private boolean existe(int rut){
+    private boolean existe(String rut){
         int registros=0;
         try{
             String query = "select count(*) as total from empleado where rut="+rut+";";

@@ -27,6 +27,9 @@ public class Listar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaEmpleados = new javax.swing.JTable();
@@ -36,8 +39,8 @@ public class Listar extends javax.swing.JFrame {
         btnBuscar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        txtEmail2 = new javax.swing.JTextField();
-        txtSueldo2 = new javax.swing.JTextField();
+        txtDireccion2 = new javax.swing.JTextField();
+        txtCiudad2 = new javax.swing.JTextField();
         radioSi2 = new javax.swing.JRadioButton();
         radioNo2 = new javax.swing.JRadioButton();
         btnModificar = new javax.swing.JButton();
@@ -54,7 +57,7 @@ public class Listar extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         txtRut2 = new javax.swing.JTextField();
         txtNombre2 = new javax.swing.JTextField();
-        txtCelular2 = new javax.swing.JTextField();
+        txtEdad2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,8 +86,10 @@ public class Listar extends javax.swing.JFrame {
 
         jLabel4.setText("RUT");
 
+        buttonGroup2.add(radioSi2);
         radioSi2.setText("Si");
 
+        buttonGroup2.add(radioNo2);
         radioNo2.setText("No");
         radioNo2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,12 +99,15 @@ public class Listar extends javax.swing.JFrame {
 
         btnModificar.setText("Modificar");
 
+        buttonGroup1.add(radioMasculino2);
         radioMasculino2.setText("Masculino");
 
+        buttonGroup1.add(radioFemenino2);
         radioFemenino2.setText("Femenino");
 
         jLabel12.setText("Donante");
 
+        buttonGroup3.add(radioSi3);
         radioSi3.setText("Si");
         radioSi3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +115,7 @@ public class Listar extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup3.add(radioNo3);
         radioNo3.setText("No");
 
         jLabel5.setText("Nombre");
@@ -142,7 +151,7 @@ public class Listar extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtRut2)
                                 .addComponent(txtNombre2)
-                                .addComponent(txtCelular2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtEdad2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(radioMasculino2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -166,8 +175,8 @@ public class Listar extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(2, 2, 2)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtEmail2)
-                                    .addComponent(txtSueldo2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtDireccion2)
+                                    .addComponent(txtCiudad2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -210,7 +219,7 @@ public class Listar extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(txtRut2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -227,17 +236,16 @@ public class Listar extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(txtCelular2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(96, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
+                            .addComponent(txtEdad2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(txtEmail2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDireccion2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnModificar))
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
-                            .addComponent(txtSueldo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCiudad2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnEliminar))
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -249,8 +257,8 @@ public class Listar extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(radioSi3)
                             .addComponent(radioNo3)
-                            .addComponent(jLabel12))
-                        .addContainerGap(92, Short.MAX_VALUE))))
+                            .addComponent(jLabel12))))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         pack();
@@ -304,6 +312,9 @@ public class Listar extends javax.swing.JFrame {
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnModificar;
     public javax.swing.JButton btnVolver2;
+    public javax.swing.ButtonGroup buttonGroup1;
+    public javax.swing.ButtonGroup buttonGroup2;
+    public javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -322,11 +333,11 @@ public class Listar extends javax.swing.JFrame {
     public javax.swing.JRadioButton radioSi2;
     public javax.swing.JRadioButton radioSi3;
     public javax.swing.JTable tablaEmpleados;
-    public javax.swing.JTextField txtCelular2;
-    public javax.swing.JTextField txtEmail2;
+    public javax.swing.JTextField txtCiudad2;
+    public javax.swing.JTextField txtDireccion2;
+    public javax.swing.JTextField txtEdad2;
     public javax.swing.JTextField txtNombre2;
     public javax.swing.JTextField txtRut2;
-    public javax.swing.JTextField txtSueldo2;
     public javax.swing.JTextField txtbuscar;
     // End of variables declaration//GEN-END:variables
 }
