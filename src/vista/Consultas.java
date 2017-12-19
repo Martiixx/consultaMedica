@@ -40,14 +40,14 @@ public class Consultas extends javax.swing.JFrame {
 
         jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        menuFile.setText("File");
+        menuFile.setText("Archivo");
 
         menuSalir.setText("Salir");
         menuFile.add(menuSalir);
 
         jMenuBar1.add(menuFile);
 
-        MenuFunciones.setText("Funciones");
+        MenuFunciones.setText("Procesos");
 
         MenuAgregarEmpleados.setText("Agregar Paciente");
         MenuAgregarEmpleados.addActionListener(new java.awt.event.ActionListener() {

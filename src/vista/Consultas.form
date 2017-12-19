@@ -11,7 +11,7 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="menuFile">
           <Properties>
-            <Property name="text" type="java.lang.String" value="File"/>
+            <Property name="text" type="java.lang.String" value="Archivo"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -29,7 +29,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="MenuFunciones">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Funciones"/>
+            <Property name="text" type="java.lang.String" value="Procesos"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
