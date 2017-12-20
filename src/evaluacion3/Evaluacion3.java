@@ -5,6 +5,9 @@
  */
 package evaluacion3;
 
+import sql.conexion;
+import vista.Consultas;
+
 /**
  *
  * @author Duoc UC
@@ -16,6 +19,11 @@ public class Evaluacion3 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        conexion.getConexion();
+        
+        new Controlador(new Consultas() ).iniciar();
+    
     }
     
 }

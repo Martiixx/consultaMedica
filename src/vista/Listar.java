@@ -83,6 +83,11 @@ public class Listar extends javax.swing.JFrame {
         btnBuscar.setText("Buscar");
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("RUT");
 
@@ -271,6 +276,11 @@ public class Listar extends javax.swing.JFrame {
     private void radioSi3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioSi3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_radioSi3ActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+    
+        
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
      * @param args the command line arguments

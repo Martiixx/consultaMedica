@@ -130,6 +130,8 @@ public class Modelo extends conexion {
             }
             JOptionPane.showMessageDialog(null,"Paciente "+rut+" no ha sido encontrado, no se puede eliminar");
             return false;
+            
+            
     //}
        //return false;
     }

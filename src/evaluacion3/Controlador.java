@@ -1,22 +1,36 @@
 package evaluacion3;
 
+import java.awt.Dimension;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.accessibility.Accessible;
+import javax.accessibility.AccessibleContext;
 import vista.Agregar;
 import vista.Consultas;
 import vista.Listar;
 import javax.swing.*;
+import javax.swing.event.CellEditorListener;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.event.RowSorterEvent;
+import javax.swing.event.RowSorterListener;
+import javax.swing.event.TableColumnModelEvent;
+import javax.swing.event.TableColumnModelListener;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import modelo.Modelo;
 
 /**
  *
  * @author diego
  */
-public class Controlador implements ActionListener, MouseListener,FocusListener{
+public class Controlador extends JComponent implements ActionListener, MouseListener,FocusListener,TableModelListener, Scrollable, TableColumnModelListener, ListSelectionListener, CellEditorListener, Accessible, RowSorterListener{
     
     
     private Consultas vistaPrincipal;
@@ -40,6 +54,86 @@ public class Controlador implements ActionListener, MouseListener,FocusListener{
 
     @Override
     public void focusLost(FocusEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void tableChanged(TableModelEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Dimension getPreferredScrollableViewportSize() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean getScrollableTracksViewportWidth() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean getScrollableTracksViewportHeight() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void columnAdded(TableColumnModelEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void columnRemoved(TableColumnModelEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void columnMoved(TableColumnModelEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void columnMarginChanged(ChangeEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void columnSelectionChanged(ListSelectionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void valueChanged(ListSelectionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void editingStopped(ChangeEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void editingCanceled(ChangeEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public AccessibleContext getAccessibleContext() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void sorterChanged(RowSorterEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
@@ -90,13 +184,10 @@ public class Controlador implements ActionListener, MouseListener,FocusListener{
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
             SwingUtilities.updateComponentTreeUI(vistaPrincipal);
-            SwingUtilities.updateComponentTreeUI( this.addEmp );
-            SwingUtilities.updateComponentTreeUI( this.delete);
-            SwingUtilities.updateComponentTreeUI( this.list);
-            SwingUtilities.updateComponentTreeUI( this.search);
-            //SwingUtilities.updateComponentTreeUI( this.modProd );
+            SwingUtilities.updateComponentTreeUI( this.addEmp );           
+            SwingUtilities.updateComponentTreeUI( this.list);           
             this.vistaPrincipal.setLocationRelativeTo(null);
-            this.vistaPrincipal.setTitle("Examen");
+            this.vistaPrincipal.setTitle("Consulta Médica");
             this.vistaPrincipal.setVisible(true);
         } catch (UnsupportedLookAndFeelException ex) {}
           catch (ClassNotFoundException ex) {}
@@ -307,8 +398,11 @@ public class Controlador implements ActionListener, MouseListener,FocusListener{
             
                 
             case btnEliminar:
+            
                 this.modelo.eliminaEmpleado(this.list.txtRut2.getText());
                 break;
+             
+            
             case btnBuscar:
                 empleado= this.modelo.buscarPaciente(this.list.txtRut2.getText());
                 this.list.txtRut2.setText(empleado[0]);
@@ -345,38 +439,38 @@ public class Controlador implements ActionListener, MouseListener,FocusListener{
                 this.vistaPrincipal.setVisible(true);
                 break;
                 
-            case btnVolver3:
-                this.search.setVisible(false);
-                this.vistaPrincipal.setVisible(true);
-                break;
-                
-            case btnVolver4:
-                this.delete.setVisible(false);
-                this.vistaPrincipal.setVisible(true);
-                break;
-            
+           
             case btnVolver2:
                 this.list.setVisible(false);
                 this.vistaPrincipal.setVisible(true);
                 break;
                 
             case btnModificar:
-                if(this.search.radioCasado2.isSelected()){
-                    est_civil = "c";
+                if(this.list.radioFemenino2.isSelected()){
+                    genero = "f";
                 }
-                if(this.search.radioSoltero2.isSelected()){
-                    est_civil = "s";
+                if(this.list.radioMasculino2.isSelected()){
+                    genero = "m";
+                           
                 }
-                if(this.search.radioViudo2.isSelected()){
-                    est_civil = "v";
+                if(this.list.radioNo2.isSelected()){
+                    isapre= "s";
                 }
-                depto = String.valueOf(this.search.comboDepto2.getSelectedItem());
-               if(this.modelo.modificaEmpleado(Integer.parseInt(this.search.txtCodigo2.getText()), this.search.txtRut2.getText(), this.search.txtNombre2.getText(),this.search.txtApellido2.getText(), Integer.parseInt(this.search.txtCelular2.getText()), this.search.txtEmail2.getText(), Integer.parseInt(this.search.txtSueldo2.getText()), est_civil, depto)){
+                if(this.list.radioSi2.isSelected()){
+                    isapre = "n";
+                }
+                if(this.list.radioNo3.isSelected()){
+                    donante = "n";
+                }
+                if(this.list.radioSi3.isSelected()){
+                    donante = "s";
+                }
+               if(this.modelo.modificaEmpleado(this.list.txtRut2.getText(), this.list.txtNombre2.getText(),genero, Integer.parseInt(this.list.txtEdad2.getText()),this.list.txtDireccion2.getText(), this.list.txtCiudad2.getText(), isapre,donante)){
                 
-                JOptionPane.showMessageDialog(null,"Empleado modificado correctamente");
+                JOptionPane.showMessageDialog(null,"paciente modificado correctamente");
                 
                 }else{
-                   JOptionPane.showMessageDialog(null,"No se pudo modificar empleado");
+                   JOptionPane.showMessageDialog(null,"No se pudo modificar paciente");
                }
 
         }
@@ -385,7 +479,7 @@ public class Controlador implements ActionListener, MouseListener,FocusListener{
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
 
     @Override
