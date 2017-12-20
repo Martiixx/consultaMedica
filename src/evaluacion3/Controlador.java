@@ -479,8 +479,25 @@ public class Controlador extends JComponent implements ActionListener, MouseList
 
     @Override
     public void mouseClicked(MouseEvent e) {
-       
+      if( e.getButton()== 1)//boton izquierdo
+        {
+            //Muestro datos de producto a modificar
+             int fila = this.list.tablaEmpleados.rowAtPoint(e.getPoint());
+             if (fila > -1){
+               
+                this.list.txtRut2.setText(String.valueOf(this.list.tablaEmpleados.getValueAt(fila, 0) ));
+                this.list.txtNombre2.setText(String.valueOf(this.list.tablaEmpleados.getValueAt(fila, 1) )); 
+                this.list.buttonGroup1.setSelected(String.valueOf(this.list.tablaEmpleados.getValueAt(fila, 2) ));
+                this.list.txtEdad2.setText(String.valueOf(this.list.tablaEmpleados.getValueAt(fila, 3) ));
+                this.list.txtDireccion2.setText(String.valueOf(this.list.tablaEmpleados.getValueAt(fila, 4) ));
+                this.list.txtCiudad2.setText(String.valueOf(this.list.tablaEmpleados.getValueAt(fila, 5) ));
+                this.list.buttonGroup2.setSelected(String.valueOf(this.list.tablaEmpleados.getValueAt(fila, 5) ));
+                this.list.buttonGroup3.setSelected(String.valueOf(this.list.tablaEmpleados.getValueAt(fila, 5) ));
+           
+             }
+        }
     }
+    
 
     @Override
     public void mousePressed(MouseEvent e) {
