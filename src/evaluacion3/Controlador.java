@@ -491,8 +491,8 @@ public class Controlador extends JComponent implements ActionListener, MouseList
                 this.list.txtEdad2.setText(String.valueOf(this.list.tablaEmpleados.getValueAt(fila, 3) ));
                 this.list.txtDireccion2.setText(String.valueOf(this.list.tablaEmpleados.getValueAt(fila, 4) ));
                 this.list.txtCiudad2.setText(String.valueOf(this.list.tablaEmpleados.getValueAt(fila, 5) ));
-                this.list.buttonGroup2.setSelected(String.valueOf(this.list.tablaEmpleados.getValueAt(fila, 5) ));
-                this.list.buttonGroup3.setSelected(String.valueOf(this.list.tablaEmpleados.getValueAt(fila, 5) ));
+                this.list.buttonGroup2.setSelected(String.valueOf(this.list.tablaEmpleados.getValueAt(fila, 6) ));
+                this.list.buttonGroup3.setSelected(String.valueOf(this.list.tablaEmpleados.getValueAt(fila, 7) ));
            
              }
         }
